@@ -14,14 +14,14 @@ public class WeatherAnalysis {
         //Step 1: Ask for number of days
     }
     public static void intro(Scanner console, int days) { // Asks for user input # of days
-        System.out.println("How many days?");
+        System.out.print("How many days?");
         days = console.nextInt();
         int[] data = new int[days];
         userInput(console, days, data);
     }
     public static void userInput(Scanner console, int days, int[] data) { //Asks for the high temperatures for each day
         for (int i =0; i<days; i++) {
-            System.out.println("Day "+(i+1)+"'s high temp: ");
+            System.out.print("Day "+(i+1)+"'s high temp: ");
             int temp = console.nextInt();
             data[i] = temp;
         }
@@ -36,6 +36,16 @@ public class WeatherAnalysis {
         average =(double)total/(double)days;
         average = (Math.round(average*10.0))/10.0;
         System.out.println("Average temp = "+average);
+        daysAbove(data, days, average);
+    }
+    public static void daysAbove(int[] data, int days, double average) {
+        int counter =0;
+        for (int i=0; i<days; i++) {
+            if (data[i]>average) {
+                counter++;
+            }
+        }
+        System.out.println(counter+" days were above average.");
     }
 }
 //Solution:
