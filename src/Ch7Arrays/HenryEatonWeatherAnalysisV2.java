@@ -53,6 +53,9 @@ public class HenryEatonWeatherAnalysisV2 {
         System.out.println(counter + " days were above average.");
         System.out.println();
         System.out.println("Temperatures: "+ Arrays.toString(data));
+        Arrays.sort(data);
+        System.out.println("Two coldest days "+data[0]+", "+data[1]+"");
+        System.out.println("Two hottest days "+data[data.length-2]+", "+ data[data.length-1]);
 
     }
 }
